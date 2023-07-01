@@ -4,6 +4,7 @@ metadata:
   labels:
     run: nginx-demo
   name: nginx-demo-deploy
+  namespace: test-namespace
 spec:
   replicas: 2
   selector:
