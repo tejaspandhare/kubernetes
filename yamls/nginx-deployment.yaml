@@ -4,12 +4,12 @@ metadata:
   labels:
     run: nginx-demo
   name: nginx-demo-deploy
-  namespace: demotest
+  namespace: test-namespace
 spec:
   replicas: 1
   selector:
     matchLabels:
-      run: test-namespace
+      run: nginx-demo
   template:
     metadata:
       labels:
