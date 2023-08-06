@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-demo-deployment
+  namespace: webservers
+  annotations:
+    kubernetes.io/change-cause: "Updating to alipine version"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx-demo
+  template:
+    metadata:
+      name: nginx-demo-pod
+      labels:
+        app: nginx-demo
+    spec:
+      containers:
+        - name: nginx-demo-container
+          image: nginx:alpine
+          ports:
+            - containerPort: 80
