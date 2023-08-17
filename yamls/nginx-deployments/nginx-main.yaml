@@ -6,7 +6,7 @@ metadata:
   annotations:
     kubernetes.io/change-cause: "Updating to alipine version"
 spec:
-  replicas: 2
+  replicas: 6
   selector:
     matchLabels:
       app: nginx-demo
