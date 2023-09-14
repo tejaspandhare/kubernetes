@@ -1,4 +1,4 @@
-Step 1: Deploy Kubernetes Cluster \n
+Step 1: Deploy Kubernetes Cluster 
 Step 2: Deploy MetalLB / Ingress solution
 Step 3: Configure Persistent Storage Solution
 Step 4: Deploy AWX Operator on Kubernetes 
