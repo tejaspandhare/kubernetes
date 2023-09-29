@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-demo-deployment
-  namespace: default
+  namespace: demotest
   annotations:
     kubernetes.io/change-cause: "Updating to alipine version"
 spec:
@@ -18,6 +18,6 @@ spec:
     spec:
       containers:
         - name: nginx-demo-container
-          image: nginx:alpine
+          image: nginx
           ports:
             - containerPort: 80
