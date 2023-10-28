@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-demo-deployment
-  namespace: argocd
+  namespace: demotest
   annotations:
     kubernetes.io/change-cause: "Updating to alipine version"
 spec:
