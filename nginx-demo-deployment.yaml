@@ -1,8 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-demo-deployment
-  namespace: demo
+  name: nginx-demo-deployment-tejas
+  namespace: demotest
 spec:
   replicas: 4
   selector:
