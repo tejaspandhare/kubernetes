@@ -40,7 +40,7 @@ git checkout $RELEASE_TAG
 export NAMESPACE=awx
 make deploy
 
-## **Step 5: Create Persistent Volumes and Deployments**
+## Step 5: Create Persistent Volumes and Deployments
 
 kubectl create -f awx_pv.yaml
 kubectl create -f awx_pvc.yaml
