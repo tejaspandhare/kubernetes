@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkinswithsansible
+  namespace: pipelines
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jenkinswithsansible
+  template:
+    metadata:
+      labels:
+        app: jenkinswithsansible
+    spec:
+      securityContext:
+        fsGroup: 1000
+        runAsUser: 1000
+      containers:
+        - name: jenkinswithsansible
+          image: tejaspandhare/jenkinswithansible
+          imagePullPolicy: Always
+          resources:
+            limits:
+              memory: "2Gi"
+              cpu: "1000m"
+            requests:
+              memory: "500Mi"
+              cpu: "500m"
+          ports:
+            - name: httpport
+              containerPort: 8080
+          volumeMounts:
+            - name: jenkinsansible-nonroot-pv-volume
+              mountPath: /var/jenkins_home
+      volumes:
+        - name: jenkinsansible-nonroot-pv-volume
+          persistentVolumeClaim:
+            claimName: jenkinsansible-nonroot-pv-claim
