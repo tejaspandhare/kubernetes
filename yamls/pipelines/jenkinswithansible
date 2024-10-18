@@ -6,7 +6,7 @@ metadata:
   annotations:
     kubernetes.io/change-cause: "Updating to Dockerhub latest image"
 spec:
-  replicas: 2
+  replicas: 4
   selector:
     matchLabels:
       app: jenkinswithsansible
