@@ -1,0 +1,24 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  # This grants permissions for all namespaces, or across the whole cluster
+  name: jenkins-ansible-cluster-role
+rules:
+  - apiGroups: [""]
+    resources: ["pods", "pods/log", "pods/exec", "services", "deployments", "replicasets"]
+    verbs: ["get", "list", "create", "delete", "update", "patch", "watch"]
+
+---
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: jenkins-ansible-cluster-rolebinding
+subjects:
+  - kind: ServiceAccount
+    name: jenkins-ansible
+    namespace: pipelines
+roleRef:
+  kind: ClusterRole
+  name: jenkins-ansible-cluster-role
+  apiGroup: rbac.authorization.k8s.io
