@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkinsansiblenonroot
+  namespace: pipelines
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jenkinsansiblenonroot
+  template:
+    metadata:
+      labels:
+        app: jenkinsansiblenonroot
+    spec:
+      serviceAccountName: jenkins-ansible  # Make sure the service account is correct
+      securityContext:
+        fsGroup: 1000
+        runAsUser: 1000
+      containers:
+        - name: jenkinsansiblenonroot
+          image: 172.16.16.51:5000/jenkinsansiblenonroot
+          resources:
+            limits:
+              memory: "2Gi"
+              cpu: "1000m"
+            requests:
+              memory: "500Mi"
+              cpu: "500m"
+          ports:
+            - name: httpport
+              containerPort: 8080
+          volumeMounts:
+            - name: jenkinsansible-nonroot-ansibledemo1-pv-volume
+              mountPath: /var/jenkins_home
+      volumes:
+        - name: jenkinsansible-nonroot-ansibledemo1-pv-volume
+          persistentVolumeClaim:
+            claimName: jenkinsansible-nonroot-ansibledemo1-pv-claim
+      imagePullSecrets:
+        - name: jenkinsansible
