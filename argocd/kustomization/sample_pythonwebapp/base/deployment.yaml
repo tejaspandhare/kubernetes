@@ -7,11 +7,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mykustomwebapp
+      app: mykustomwebapp  # <- fixed to match the label below
   template:
     metadata:
       labels:
-        app: mykustomwebapp
+        app: mykustomwebapp  # <- matches the selector
     spec:
       containers:
       - name: mycontainer
