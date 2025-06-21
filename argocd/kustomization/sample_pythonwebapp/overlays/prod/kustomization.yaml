@@ -3,7 +3,7 @@ bases:
 
 namespace: weapps
 
-patches:
+patchesStrategicMerge:
 - replicas.yaml
 
 configMapGenerator:
