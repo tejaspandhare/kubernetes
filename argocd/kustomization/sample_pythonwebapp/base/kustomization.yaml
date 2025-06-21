@@ -16,5 +16,5 @@ nameSuffix:
   -v1
 
 configMapGenerator:
-- name: mykustom-map
+- name: mykustom-configmap
   env: config.properties
