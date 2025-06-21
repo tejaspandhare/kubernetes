@@ -3,7 +3,7 @@ bases:
 
 namespace: webapps
 
-patchesStrategicMerge:
+patches:
 - replicas.yaml
 
 configMapGenerator:
