@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mykustomwebapp
-  namespace: default
+  namespace: webapps
 spec:
   replicas: 1
   template:
