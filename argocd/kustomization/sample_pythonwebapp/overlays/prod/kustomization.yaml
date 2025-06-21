@@ -3,7 +3,7 @@ resources:
 
 namespace: webapps
 
-patches:
+resources:
 - replicas.yaml
 
 configMapGenerator:
