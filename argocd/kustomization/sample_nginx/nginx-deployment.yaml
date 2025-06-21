@@ -2,17 +2,17 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: nginx
-  name: nginx
+    app: tejas-nginx
+  name: tejas-nginx
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nginx
+      app: tejas-nginx
   template:
     metadata:
       labels:
-        app: nginx
+        app: tejas-nginx
     spec:
       containers:
       - image: nginx
