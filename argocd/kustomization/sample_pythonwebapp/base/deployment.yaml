@@ -7,7 +7,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mykustomapp
+      app: mykustomwebapp
   template:
     metadata:
       labels:
