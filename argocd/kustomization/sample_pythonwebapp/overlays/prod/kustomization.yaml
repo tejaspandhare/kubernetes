@@ -1,7 +1,7 @@
 bases:
 - ../../base
 
-namespace: weapps
+namespace: webapps
 
 patchesStrategicMerge:
 - replicas.yaml
