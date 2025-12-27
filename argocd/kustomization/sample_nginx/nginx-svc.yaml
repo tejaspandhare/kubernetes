@@ -4,6 +4,7 @@ metadata:
   labels:
     app: tejas-nginx
   name: tejas-nginx-svc
+  namespace: webapps
 spec:
   ports:
   - port: 80
